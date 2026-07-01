@@ -1,94 +1,109 @@
-# Примеры сообщений для outreach по типу роли
+# Example outreach messages by role type
 
-Это шаблоны для адаптации — никогда не копируйте дословно.
-Лучшие сообщения специфичны для конкретного человека.
-
----
-
-## Коммерческие / Продажи
-
-### Вариант 1 — Карьерный рост (холодный InMail)
-**Крючок:** Кандидат масштабировал enterprise-продажи, но застрял в рамках одного региона.
-
-Вы выстроили корпоративный pipeline [Компании] с нуля — это именно тот опыт, который нужен [Клиент] на следующем этапе.
-
-Они выходят на [регион/сегмент] и ищут [Должность], который сделает это не в первый раз. Масштаб другой: полная автономия по стратегии, прямой выход на C-level, equity на старте.
-
-Готовы к 15-минутному звонку на следующей неделе?
+These are templates to adapt — never copy verbatim.
+The best messages are specific to the individual person.
 
 ---
 
-### Вариант 2 — Признание заслуг
-**Крючок:** Кандидат вырастил команду с 3 до 18 человек — конкретный факт из профиля.
+## Commercial / Sales
 
-Рост команды с 3 до 18 человек за два года в [Компании] — это не случайность, это система. Именно такой подход нужен [Клиент]: они строят коммерческую функцию с чистого листа и хотят, чтобы это делал человек, который уже проходил этот путь.
+### Variant 1 — Career growth (cold InMail)
+**Hook:** Candidate scaled enterprise sales but is capped within a single region.
 
-Роль — [Должность], старт сразу с влиянием на стратегию.
+You built [Company]'s enterprise pipeline from scratch — that's exactly the experience [Client]
+needs for its next stage.
 
-Открыты к короткому разговору на следующей неделе?
+They're expanding into [region/segment] and looking for a [Title] who's done this before. The
+scale is different: full strategic autonomy, direct access to the C-suite, equity from day one.
 
----
-
-## Маркетинг
-
-### Вариант 3 — Любопытство / низкое давление
-**Крючок:** Кандидат — senior, получает много запросов, нужен нестандартный заход.
-
-[Имя], у меня есть роль, про которую мне сложно было бы сказать, что она точно вас заинтересует — но интуиция говорит, что стоит спросить.
-
-[Клиент], [краткий контекст]. Ищут [Должность] с реальным влиянием на продукт и аудиторию.
-
-Если вдруг открыты к 15-минутному разговору — напишите, расскажу подробнее.
+Are you open to a 15-minute call next week?
 
 ---
 
-### Вариант 1 — Карьерный рост (международный маркетинг)
-**Крючок:** Кандидат работал на локальном рынке, но в профиле виден интерес к международным проектам.
+### Variant 2 — Recognition
+**Hook:** Candidate grew a team from 3 to 18 people — a concrete fact from their profile.
 
-Вы строили маркетинг для [рынка] — это сильная база. [Клиент] выходит на [регион] и ищет [Должность], который возьмёт этот выход целиком: стратегия, команда, бюджет.
+Growing a team from 3 to 18 people in two years at [Company] isn't luck, it's a system. That's
+exactly the approach [Client] needs: they're building a commercial function from scratch and
+want someone who's already walked that path.
 
-Это другой масштаб задачи — и другой масштаб влияния.
+The role is [Title], with strategic influence from the start.
 
-Открыты к разговору на следующей неделе?
-
----
-
-## Технологии / Продукт
-
-### Вариант 2 — Признание заслуг
-**Крючок:** Публичный запуск продукта или метрика, которую можно найти в профиле/публикациях.
-
-Запуск [продукта/фичи] в [Компании] — это не просто строчка в резюме, это сложная задача, которую большинство обходит стороной. Именно поэтому я пишу.
-
-[Клиент] на этапе, где продуктовая стратегия становится главным отличием. Ищут [Должность] — человека, который умеет не только придумать, но и довести до результата.
-
-Готовы к 15-минутному звонку?
+Open to a short conversation next week?
 
 ---
 
-## Финансы / Операции
+## Marketing
 
-### Вариант 1 — Карьерный рост
-**Крючок:** Кандидат работал в крупной структуре, но в профиле видно, что готов к более предпринимательской роли.
+### Variant 3 — Curiosity / low-pressure
+**Hook:** Candidate is senior and gets a lot of inbound — needs a non-standard opener.
 
-В [Компании] вы работали в условиях зрелой структуры. [Клиент] — другая история: [Series B / PE-backed / pre-IPO], и им нужен [Должность], который строит функцию, а не поддерживает готовую.
+[Name], I have a role I'd hesitate to say is definitely a fit for you — but my instinct says
+it's worth asking.
 
-Прямой выход на CEO, влияние на стратегию с первого дня.
+[Client], [brief context]. Looking for a [Title] with real influence over product and audience.
 
-Открыты к короткому разговору на следующей неделе?
+If you're open to a 15-minute conversation, let me know and I'll share more.
 
 ---
 
-## Общие принципы для всех ролей
+### Variant 1 — Career growth (international marketing)
+**Hook:** Candidate worked in a local market, but their profile shows interest in international projects.
 
-1. **Первая строка — про них, не про вас.** Конкретная компания, повышение, рынок, продукт. Никогда: "Я наткнулся на ваш профиль" / "Я слежу за вашей карьерой."
+You built marketing for [market] — that's a strong foundation. [Client] is expanding into
+[region] and looking for a [Title] to own that expansion end to end: strategy, team, budget.
 
-2. **Второй абзац — возможность в одном предложении.** Этап компании + ключевая задача. Не список требований из JD.
+That's a different scale of task — and a different scale of impact.
 
-3. **Призыв к действию — простой и конкретный.** "Открыты к 15-минутному звонку на следующей неделе?" работает лучше, чем "Дайте знать, если захотите узнать больше."
+Open to a conversation next week?
 
-4. **Длина.** 80–120 слов — оптимум. Короче = выше вероятность ответа.
+---
 
-5. **Не прикладывайте JD.** Это делает сообщение транзакционным. Поделитесь деталями после того, как кандидат проявит интерес.
+## Technology / Product
 
-6. **Тон — человеческий, не шаблонный.** Если сообщение звучит так, будто его мог написать любой рекрутер любому кандидату — переписать.
+### Variant 2 — Recognition
+**Hook:** A public product launch or metric findable in the candidate's profile/publications.
+
+Launching [product/feature] at [Company] isn't just a résumé line — it's a hard problem most
+people avoid. That's why I'm reaching out.
+
+[Client] is at the stage where product strategy becomes the key differentiator. Looking for a
+[Title] — someone who can not only conceive but also ship.
+
+Are you open to a 15-minute call?
+
+---
+
+## Finance / Operations
+
+### Variant 1 — Career growth
+**Hook:** Candidate worked within a mature structure, but their profile shows readiness for a more entrepreneurial role.
+
+At [Company] you operated within a mature structure. [Client] is a different story:
+[Series B / PE-backed / pre-IPO], and they need a [Title] who builds the function, not one who
+maintains an existing one.
+
+Direct access to the CEO, strategic influence from day one.
+
+Open to a short conversation next week?
+
+---
+
+## General principles for all roles
+
+1. **First line is about them, not you.** A specific company, promotion, market, or product.
+   Never: "I came across your profile" / "I've been following your career."
+
+2. **Second paragraph — the opportunity in one sentence.** Company stage + the key challenge.
+   Not a list of JD requirements.
+
+3. **Call to action — simple and concrete.** "Are you open to a 15-minute call next week?"
+   works better than "Let me know if you'd like to learn more."
+
+4. **Length.** 80–120 words is the sweet spot. Shorter = higher response rate.
+
+5. **Don't attach the JD.** It makes the message transactional. Share details once the
+   candidate shows interest.
+
+6. **Tone — human, not template.** If the message sounds like it could've been written by any
+   recruiter to any candidate, rewrite it.

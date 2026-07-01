@@ -13,6 +13,10 @@ When triggered (e.g. by pasting a JD, asking to "find candidates", "source for t
 
 See [SKILL.md](SKILL.md) for the full instructions, and [references/](references/) for the boolean search guide and outreach examples used by the skill.
 
+**Note:** outreach messages, profile tables, and other templates default to English, but the
+skill matches whatever language you or the JD are written in; see "Output language" in
+`SKILL.md`.
+
 ## Install
 
 Copy this folder into your Claude Code skills directory:
@@ -42,6 +46,8 @@ LinkedIn monitors for automated or bot-like behavior. To keep your account safe 
 | Pending unaccepted invites | 2,500 total | 2,500 total | Withdraw old ones regularly |
 
 Sending requests or messages in rapid bursts (even within these caps) can trigger spam filters. Space actions out and avoid running long uninterrupted sessions.
+
+The skill itself caps Cowork profile-visit batches at 15–20 per instruction (see `SKILL.md` Part C) to line up with the "safe daily pace" figures above — if your search turns up more candidates than that, run the Cowork collection step in separate batches rather than all at once.
 
 **Don't scrape or export data at scale.** Extracting large amounts of profile data, contact lists, or company information is a primary reason LinkedIn blocks accounts. Use the skill only for targeted, purposeful lookups.
 
