@@ -22,3 +22,22 @@ git clone https://github.com/Da6ka/linkedin-sourcing-skill.git ~/.claude/skills/
 ```
 
 Restart Claude Code (or start a new session) and the skill will be available automatically — Claude triggers it when you paste a JD or ask to source/outreach on LinkedIn.
+
+
+## Avoiding LinkedIn account restrictions
+
+LinkedIn monitors for automated or bot-like behavior. To keep your account safe while using this skill, follow these precautions:
+
+**Use it moderately and naturally.** Avoid running large-scale or repetitive tasks in a short period (e.g., sending hundreds of connection requests or messages in one session).
+
+**Don't violate LinkedIn's Terms of Service.** The skill operates your browser just like a human would — it clicks, types, and navigates. However, LinkedIn still prohibits automated scraping and mass actions.
+
+**Avoid high-volume actions in bulk.** Sending many connection requests, messages, or profile views in rapid succession are the most common triggers for restrictions. Keep volumes low and space out such actions.
+
+**Don't scrape or export data at scale.** Extracting large amounts of profile data, contact lists, or company information is a primary reason LinkedIn blocks accounts. Use the skill only for targeted, purposeful lookups.
+
+**Keep sessions realistic.** Very long uninterrupted sessions with constant activity can look suspicious. Stick to focused, human-scale tasks.
+
+**Respect CAPTCHAs.** If LinkedIn presents a CAPTCHA or verification challenge, the skill will stop and let you handle it yourself — this is by design and protects your account.
+
+As long as you use this skill for reasonable, human-scale tasks (researching a specific candidate, sending a message, reviewing a profile), your account should stay safe.
