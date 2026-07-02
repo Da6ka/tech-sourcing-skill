@@ -7,12 +7,31 @@ on:
     branches: [main]
 
 jobs:
-  validate:
-    runs-on: ubuntu-latest
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      # Check out into a directory whose path contains a space. Combined with
+      # windows-latest, this exercises the validator's own path + line-ending
+      # handling — the cases a bare new URL(...).pathname and /^---\n/ break on.
+      - name: Checkout into a path containing a space
+        uses: actions/checkout@v4
+        with:
+          path: 'space dir'
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - name: Validate skill structure and links
+        working-directory: 'space dir'
         run: node validate-skill.mjs
+
+  # Aggregate gate. This job's name is the required status check on main
+  # ("validate"); it passes only if every matrix leg above succeeds.
+  validate:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "All matrix legs passed."
