@@ -17,7 +17,7 @@ if (!existsSync(skillPath)) {
   errors.push('SKILL.md is missing')
 } else {
   const text = readFileSync(skillPath, 'utf8')
-  const fm = /^---\n([\s\S]*?)\n---/.exec(text)
+  const fm = /^---\r?\n([\s\S]*?)\r?\n---/.exec(text)
   if (!fm) {
     errors.push('SKILL.md has no YAML frontmatter block')
   } else {
