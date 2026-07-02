@@ -92,7 +92,9 @@ Open to a short conversation next week?
 ## General principles for all roles
 
 1. **First line is about them, not you.** A specific company, promotion, market, or product.
-   Never: "I came across your profile" / "I've been following your career."
+   Never: "I came across your profile" / "I've been following your career." (Do still mention
+   the source once mid-message — "your LinkedIn profile" — it's the GDPR Article 14 notice at
+   first contact; it just doesn't belong in the opening line.)
 
 2. **Second paragraph — the opportunity in one sentence.** Company stage + the key challenge.
    Not a list of JD requirements.

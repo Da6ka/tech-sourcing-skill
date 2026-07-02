@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-02 — compliance review (GDPR, EU AI Act, 152-ФЗ)
+
+Reviewed the workflow against GDPR, the EU AI Act (as amended by the May 2026 Digital
+Omnibus agreement), and Russia's 152-ФЗ. The skill is assistive-only, which is the right
+shape for all three regimes; five fixes landed from the review:
+
+- **Outreach (GDPR Art. 14):** every message must now mention the source ("your LinkedIn
+  profile") once, mid-message — the first message to a sourced candidate doubles as the
+  legally required notice of where their data came from. The "I came across your profile"
+  opener stays banned; the reference guide explains the distinction
+- **Retention:** the Cowork tracker instruction now includes a reminder to delete or
+  anonymise candidate rows once the search closes
+- **README:** new "Human in the loop by design" disclaimer bullet (no auto-sending, no
+  automated decisions); new EU AI Act bullet (recruitment AI is Annex III high-risk;
+  deployer obligations expected from 2 December 2027); new Russia/152-ФЗ bullet (public
+  profile ≠ consent, data-localization requirement, Roskomnadzor notification before
+  cross-border transfers — including pasting Russian candidates' data into foreign-hosted
+  AI services)
+
 ## 2026-07-02 — Cowork step is now opt-in
 
 - Split the workflow into a safe default and an explicit opt-in: the Google X-ray search
