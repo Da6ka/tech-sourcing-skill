@@ -8,8 +8,9 @@ When triggered (e.g. by pasting a JD, asking to "find candidates", "source for t
 
 1. Synthesizes the role/briefing into a candidate persona
 2. Finds real LinkedIn profiles via web search
-3. Scores candidates against the persona
-4. Drafts personalized outreach messages
+3. Optionally collects full profile text into a candidate tracker via the [Cowork](https://claude.com/product/cowork) browser (requires Cowork and a logged-in LinkedIn session — see Part C in `SKILL.md`; skipped gracefully otherwise)
+4. Scores candidates against the persona
+5. Drafts personalized outreach messages
 
 See [SKILL.md](SKILL.md) for the full instructions, and [references/](references/) for the boolean search guide and outreach examples used by the skill.
 
@@ -27,6 +28,20 @@ git clone https://github.com/Da6ka/linkedin-sourcing-skill.git ~/.claude/skills/
 
 Restart Claude Code (or start a new session) and the skill will be available automatically — Claude triggers it when you paste a JD or ask to source/outreach on LinkedIn.
 
+To update an existing install (the clone above fails if the folder already exists):
+
+```bash
+cd ~/.claude/skills/linkedin-sourcing && git pull
+```
+
+## Example
+
+Paste a job description and ask:
+
+> Source candidates for this role: [JD text]
+
+The skill responds in one pass with a candidate persona, 3–5 Boolean search strings (for LinkedIn, Google, and Sales Navigator), a table of ~15–20 real LinkedIn profiles with confidence ratings, a scorecard tailored to the role's must-haves, and three outreach drafts for the top match.
+
 
 ## Avoiding LinkedIn account restrictions
 
@@ -34,14 +49,14 @@ LinkedIn monitors for automated or bot-like behavior. To keep your account safe 
 
 **Use it moderately and naturally.** Avoid running large-scale or repetitive tasks in a short period (e.g., sending hundreds of connection requests or messages in one session).
 
-**Don't violate LinkedIn's Terms of Service.** The skill operates your browser just like a human would — it clicks, types, and navigates. However, LinkedIn still prohibits automated scraping and mass actions.
+**Don't violate LinkedIn's Terms of Service.** The skill itself only runs web searches — your browser is touched only if you run the optional Cowork collection step, where it clicks, types, and navigates like a human would. Even so, LinkedIn prohibits automated scraping and mass actions.
 
 **Avoid high-volume actions in bulk.** LinkedIn does not publish exact limits and changes them over time — the figures below are approximate, community-reported ballparks (circa 2025), not official numbers. Treat them as directional and stay well under them:
 
 | Action | Free account | Paid account | Safe daily pace |
 |---|---|---|---|
-| Connection requests | ~80–100/week | ~100/week | 15–20/day |
-| Messages to connections | ~100/week | ~150/week | 15–20/day |
+| Connection requests | ~80–100/week | ~100/week | 10–15/day, max 5 days/week (~50–75/week) |
+| Messages to connections | ~100/week | ~150/week | 10–15/day, max 5 days/week (~50–75/week) |
 | Profile views | 500/day | 2,000/day | Stay under 50% (~250/day free, ~1,000/day paid) |
 | Pending unaccepted invites | 2,500 total | 2,500 total | Withdraw old ones regularly |
 

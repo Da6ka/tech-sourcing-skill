@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-02 — post-publication review fixes
+
+Fixes from a team-lead-style review of the published repo:
+
+- **Consistency:** resolved the Module 2 Part B contradiction (8–12 URLs *per string* vs
+  15–20 *total*) — the target is now stated once: 15–20 profiles total across all strings
+- **Reliability:** added a hard "never invent URLs" rule — only profile URLs literally
+  returned by the search tool may appear in the table; fewer results are presented honestly
+- **Cost/latency:** capped the web-search budget at 4–6 searches per sourcing run
+- **Robustness:** added a fallback for environments with no web search tool (deliver Boolean
+  strings only, user runs them manually)
+- **Behavior:** defined Module 4's default output — three variants for the single
+  highest-confidence profile as a demonstration, more on request
+- **Cleanup:** removed the screenshot mention from the Cowork step prose (the instruction
+  never took one), and clarified that Claude fills the URL placeholder in the Cowork block
+- **README:** fixed the safe-daily-pace figures that exceeded the weekly caps they cite
+  (now 10–15/day, max 5 days/week); documented the Cowork dependency for Part C; corrected
+  the "operates your browser" claim (only the optional Cowork step does); added update
+  instructions and a usage example
+
 ## 2026-07-02
 
 Pre-release validation before sharing the skill publicly:
