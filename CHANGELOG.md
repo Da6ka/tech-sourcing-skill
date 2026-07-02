@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-07-02 — greeting and scenario menu
+
+- The skill now opens every run with a short greeting. If the user already pasted a JD or
+  profiles, it names the path it's taking and runs it in the same response (no added
+  friction). If the input isn't enough to start, it shows a five-scenario menu (full run /
+  search strings only / outreach only / score profiles / another round) instead of asking
+  open-ended questions, with each scenario routed to the matching modules
+
 ## 2026-07-02 — behavioral test round (6 live headless runs)
 
 Tested the skill end-to-end in fresh Claude Code sessions: default JD run, rare-role honesty,
