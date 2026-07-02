@@ -1,5 +1,33 @@
 # Changelog
 
+## 2026-07-02 — staged delivery with two checkpoints
+
+- The full run no longer arrives as one giant response. It now pauses twice: after the
+  persona (confirm or correct it before any web searches are spent) and after the profile
+  table (another search round / continue to scorecard + outreach / stop). Scorecard and
+  outreach still ship together — both are cheap. An escape hatch preserves the old
+  behaviour: users who explicitly ask to "run it all, no questions" get the single-response
+  full run
+
+## 2026-07-02 — outreach language follows the candidate, not the JD
+
+- A live test with a Russian JD surfaced a gap: the top candidate had an English-only
+  profile, and the "match the JD language" rule would have produced outreach he couldn't
+  read. Outreach messages (Module 4) are now written in the candidate's likely language,
+  inferred from their profile, with a note whenever it differs from the rest of the output.
+  Persona, tables, and scorecard still follow the JD/user language
+- Non-English output should use native terms instead of English calques («наблюдение»,
+  not «финдинг»)
+
+## 2026-07-02 — missing company name in outreach (E2E test finding)
+
+- An end-to-end test run surfaced a gap in Module 4: the "name the company and role clearly"
+  rule assumed the company name is always in the input. The rule now covers all three cases —
+  name it when known; use a [Company] placeholder plus a fill-in-before-sending note when the
+  user simply didn't include it; and for agency or confidential searches, where the recruiter
+  can't disclose the client, be candid in a human voice ("a company I can't name yet: a
+  ~120-person Series B AI startup in Amsterdam") instead of a made-up name or vague filler
+
 ## 2026-07-02 — compliance review (GDPR, EU AI Act, 152-ФЗ)
 
 Reviewed the workflow against GDPR, the EU AI Act (as amended by the May 2026 Digital
