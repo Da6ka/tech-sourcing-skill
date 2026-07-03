@@ -256,7 +256,15 @@ The Google X-ray results from Part B are the complete, safe deliverable: they in
 LinkedIn account activity at all. Many recruiters are (rightly) cautious about LinkedIn's
 scraping rules, so do NOT output the Cowork instruction block by default.
 
-Instead, after the profile table, make a short offer with a plain risk disclaimer:
+**Pause here before offering Cowork.** Deliver the profile table as a complete, standalone
+answer first. Don't fold the Cowork offer into the same breath as the results — let the user
+sit with the table before introducing the idea of browser automation. When you do raise it,
+frame it as a genuine decision point, not a next step: the user needs to actually feel ready to
+put their LinkedIn account at risk, not just reflexively say "sure." If there's any doubt they've
+registered the risk, ask them to confirm explicitly rather than treating silence or a quick "ok"
+as informed consent.
+
+Then, as a separate offer after the table, make a short offer with a plain risk disclaimer:
 
 ```
 **Optional next step — collect full profiles via Cowork.** (Cowork is Claude's browser
@@ -270,6 +278,9 @@ account at risk. The instruction stays within conservative limits (max 15–20 p
 batch, spread across the day), but there is no guarantee — see "Avoiding LinkedIn account
 restrictions" in the README. If you'd rather stay fully manual, the results above are already
 usable: open the profiles yourself and paste any of them back here for scoring and outreach.
+
+This is your call, not a default next step — only say yes if you're actually comfortable
+carrying that account risk today. It's fine to skip it, do it later, or stay fully manual.
 
 Want the Cowork instruction? Say yes and I'll generate it.
 ```

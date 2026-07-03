@@ -67,7 +67,10 @@ LinkedIn monitors for automated or bot-like behaviour. To keep your account safe
 Note on connection requests: LinkedIn's weekly invitation limit is applied account-wide and a
 paid tier (Premium, Sales Navigator, Recruiter Lite) does **not** raise it — the cap is roughly
 the same whether or not you pay. Premium mainly lifts the *profile view* and *messaging* ceilings,
-which is why those two rows differ by tier and this one doesn't.
+which is why those two rows differ by tier and this one doesn't. Some community writeups advise
+free accounts to stay under ~80/week specifically (vs. ~100/week for paid) as an extra margin of
+safety — the skill's own safe-pace figure (50–75/week) already sits below both, so this doesn't
+change the guidance, just the source of the number.
 
 Sending requests or messages in rapid bursts (even within these caps) can trigger spam filters. Space actions out and avoid running long uninterrupted sessions.
 
