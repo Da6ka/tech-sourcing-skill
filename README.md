@@ -3,17 +3,19 @@
 [![CI](https://github.com/Da6ka/linkedin-sourcing-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/Da6ka/linkedin-sourcing-skill/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/Da6ka/linkedin-sourcing-skill)](https://github.com/Da6ka/linkedin-sourcing-skill/releases/latest)
 
-A [Claude Code](https://claude.com/claude-code) skill for LinkedIn candidate sourcing — turns a job description or briefing into a candidate persona, finds matching LinkedIn profiles, scores them, and drafts personalised outreach in one pass.
+A [Claude Code](https://claude.com/claude-code) skill for candidate sourcing — turns a job description or briefing into a candidate persona, finds matching profiles on LinkedIn and (when the role calls for it) other platforms, scores them, and drafts personalised outreach in one pass.
 
 ## What it does
 
 When triggered (e.g. by pasting a JD, asking to "find candidates", "source for this role", or "write outreach"), the skill walks through a full sourcing workflow:
 
-1. Synthesises the role/briefing into a candidate persona
-2. Finds real LinkedIn profiles via web search
-3. Offers an optional, opt-in step to collect full profile text into a candidate tracker via the [Cowork](https://claude.com/product/cowork) browser — presented with a risk disclaimer and only generated if you say yes (requires Cowork and a logged-in LinkedIn session; see Part C in `SKILL.md` and "Avoiding LinkedIn account restrictions" below)
-4. Scores candidates against the persona
-5. Drafts personalised outreach messages
+1. Asks what type of candidates you're sourcing (tech, design, data/ML, algorithm-heavy, commercial/general, RU/CIS market) and picks the right source mix accordingly — LinkedIn always runs; GitHub, Stack Overflow, Kaggle, Codeforces, Dribbble, Behance, hh.ru, geekjob.ru, Reddit, Twitter/X, or Telegram are added when they fit the role (see `references/other-platforms.md`)
+2. Synthesises the role/briefing into a candidate persona
+3. Finds real profiles via web search across the selected sources
+4. Offers an optional, opt-in step to collect full LinkedIn profile text into a candidate tracker via the [Cowork](https://claude.com/product/cowork) browser — presented with a risk disclaimer and only generated if you say yes (requires Cowork and a logged-in LinkedIn session; see Part C in `SKILL.md` and "Avoiding LinkedIn account restrictions" below)
+5. Scores candidates against the persona
+6. Drafts personalised outreach messages
+7. Lists which other sources weren't used, in case you want another round on a different platform
 
 See [SKILL.md](SKILL.md) for the full instructions, and [references/](references/) for the boolean search guide and outreach examples used by the skill.
 
