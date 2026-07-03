@@ -1,12 +1,12 @@
 # Contributing
 
-Thanks for your interest in improving the LinkedIn sourcing skill. This is a
+Thanks for your interest in improving the tech sourcing skill. This is a
 [Claude Code](https://claude.com/claude-code) skill — a Markdown instruction file plus a couple of
 reference docs — so most contributions are edits to prose, not code.
 
 ## Reporting an issue
 
-Open a [GitHub issue](https://github.com/Da6ka/linkedin-sourcing-skill/issues) if you hit a bug,
+Open a [GitHub issue](https://github.com/Da6ka/tech-sourcing-skill/issues) if you hit a bug,
 a false trigger (the skill firing when it shouldn't, or not firing when it should), an inaccurate
 rate-limit figure, or anything in the workflow that produces a bad result. The more concrete the
 better — include the input you gave (a sanitised JD is fine), what you expected, and what you got.

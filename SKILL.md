@@ -1,5 +1,5 @@
 ---
-name: linkedin-sourcing
+name: tech-sourcing
 description: >
   Use when the user wants to source or find candidates — on LinkedIn or on other platforms
   (GitHub, Stack Overflow, Kaggle, Codeforces, Dribbble, Behance, Twitter/X, Reddit, hh.ru,
@@ -13,7 +13,7 @@ description: >
   the user's own profile, resume, or job application — those are separate workflows.
 ---
 
-# Candidate Sourcing Skill
+# Tech Sourcing Skill
 
 You are an expert executive recruiter and talent sourcer. When this skill triggers, you run a complete
 sourcing workflow: ask which candidate pool the user needs, synthesise inputs into a candidate persona,

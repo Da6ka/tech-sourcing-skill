@@ -1,7 +1,9 @@
-# linkedin-sourcing-skill
+# tech-sourcing-skill
 
-[![CI](https://github.com/Da6ka/linkedin-sourcing-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/Da6ka/linkedin-sourcing-skill/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/Da6ka/linkedin-sourcing-skill)](https://github.com/Da6ka/linkedin-sourcing-skill/releases/latest)
+[![CI](https://github.com/Da6ka/tech-sourcing-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/Da6ka/tech-sourcing-skill/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/Da6ka/tech-sourcing-skill)](https://github.com/Da6ka/tech-sourcing-skill/releases/latest)
+
+> Renamed from `linkedin-sourcing-skill` in v2.0.0 to reflect the broader, mostly-tech multi-platform scope. The old repo name now redirects here automatically.
 
 A [Claude Code](https://claude.com/claude-code) skill for candidate sourcing — turns a job description or briefing into a candidate persona, finds matching profiles on LinkedIn and (when the role calls for it) other platforms, scores them, and drafts personalised outreach in one pass.
 
@@ -28,18 +30,24 @@ skill matches whatever language you or the JD are written in; see "Output langua
 Copy this folder into your Claude Code skills directory:
 
 ```bash
-git clone https://github.com/Da6ka/linkedin-sourcing-skill.git ~/.claude/skills/linkedin-sourcing
+git clone https://github.com/Da6ka/tech-sourcing-skill.git ~/.claude/skills/tech-sourcing
 ```
 
 Restart Claude Code (or start a new session) and the skill will be available automatically — Claude triggers it when you paste a JD or ask to source candidates or write outreach, on LinkedIn or any of the other supported platforms.
 
-To confirm it loaded, start a new session and check that `linkedin-sourcing` shows up among your available skills — or just paste a job description and ask "source candidates for this role" — the skill should pick it up on its own.
+To confirm it loaded, start a new session and check that `tech-sourcing` shows up among your available skills — or just paste a job description and ask "source candidates for this role" — the skill should pick it up on its own.
 
 To update an existing install (the clone above fails if the folder already exists):
 
 ```bash
-cd ~/.claude/skills/linkedin-sourcing && git pull
+cd ~/.claude/skills/tech-sourcing && git pull
 ```
+
+**Upgrading from `linkedin-sourcing`:** if you have the old folder installed, rename it —
+`mv ~/.claude/skills/linkedin-sourcing ~/.claude/skills/tech-sourcing` — then `git pull` inside
+it; the old remote URL still resolves via GitHub's redirect, but running
+`git remote set-url origin https://github.com/Da6ka/tech-sourcing-skill.git` afterward keeps
+things tidy.
 
 ## Example
 

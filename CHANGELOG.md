@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-04 — v2.0.0: renamed to tech-sourcing-skill (BREAKING)
+
+Renamed the repo, local install folder, and skill frontmatter `name` from
+`linkedin-sourcing`/`linkedin-sourcing-skill` to `tech-sourcing`/`tech-sourcing-skill`, to match
+the mostly-IT platform mix added in v1.1.0 (GitHub, Stack Overflow, Kaggle, Codeforces, hh.ru,
+geekjob.ru, alongside LinkedIn).
+
+- **Repo:** `Da6ka/linkedin-sourcing-skill` → `Da6ka/tech-sourcing-skill`. GitHub redirects the
+  old URL automatically, but `git remote set-url` to the new URL is recommended.
+- **Local install:** existing checkouts at `~/.claude/skills/linkedin-sourcing` must be renamed
+  to `~/.claude/skills/tech-sourcing` — the skill's frontmatter `name:` must match the folder
+  name for Claude Code to load it correctly. See the README's "Upgrading from `linkedin-sourcing`"
+  note.
+- **SKILL.md:** `name: linkedin-sourcing` → `name: tech-sourcing`; title "Candidate Sourcing
+  Skill" → "Tech Sourcing Skill".
+- **No functional changes** — this is a pure rename; all v1.1.0 behavior (Checkpoint 0, the
+  platform recipes, LinkedIn as baseline) is unchanged.
+
+**Breaking** because the folder path and skill name existing users reference change — hence the
+major version bump rather than a minor one.
+
 ## 2026-07-04 — General candidate-sourcing bot, beyond LinkedIn
 
 Expands the skill from LinkedIn-only to a general candidate-sourcing bot ([PR #23](https://github.com/Da6ka/linkedin-sourcing-skill/pull/23)):
