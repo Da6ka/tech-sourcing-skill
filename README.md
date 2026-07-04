@@ -57,6 +57,11 @@ Paste a job description and ask:
 
 The skill responds in one pass with a candidate persona, 3–5 Boolean search strings (for LinkedIn, Google, and Sales Navigator), a table of ~15–20 real LinkedIn profiles with confidence ratings, a scorecard tailored to the role's must-haves, and three outreach drafts for the top match. For a tech/design/data role, it first asks which candidate pool you need and — once you answer — adds a second table of profiles from the matching platform (e.g. GitHub for an engineering search, Dribbble for a design one).
 
+See [`references/example-walkthrough.md`](references/example-walkthrough.md) for a full worked
+example — from job description to a verified, scored, tiered candidate list — including the
+verification catches (aspirational LinkedIn branding, stale search snippets) and judgment calls
+(geography exceptions, overqualification calls) that a search-only tool would miss.
+
 
 ## Avoiding LinkedIn account restrictions
 
