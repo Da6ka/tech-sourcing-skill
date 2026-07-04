@@ -11,23 +11,31 @@ Check the persona's **role**, **where they likely work now**, and **nice-to-have
 against this table. Suggest at most 1–2 platforms per run — don't run all of them "just in
 case"; that dilutes signal and burns search budget for no benefit.
 
-| Signal in the persona | Suggest | Why this pool beats/complements LinkedIn |
-|---|---|---|
-| Product/visual/UI designer, portfolio-driven role | Dribbble, Behance | Portfolio quality is directly visible; LinkedIn profiles rarely show actual work |
-| Developer/engineer, any stack | GitHub, Stack Overflow | Actual code and technical depth are directly visible — the single strongest signal on this list, stronger than LinkedIn's self-reported titles |
-| Developer/engineer, especially open-source or indie/build-in-public | Twitter/X | Public builders post work-in-progress and opinions LinkedIn doesn't surface |
-| Data scientist / ML engineer | Kaggle | Competition tier and public notebooks show applied modeling skill directly, not just tool keywords on a resume |
-| Backend/systems engineer where the role explicitly values strong algorithms/DSA (quant, big-tech-style interview loops) | Codeforces | Rating is a standardized, hard-to-fake measure of algorithmic ability — but see the caveat in the recipe before treating it as a general engineering signal |
-| Community, DevRel, marketing-to-developers | Twitter/X, Reddit | These are the audiences such roles already engage — activity there is a direct skill signal |
-| Deep technical niche (rare stack, research area) | Reddit (topic subreddits) | Niche subreddits concentrate specialists that generic LinkedIn keyword search misses |
-| Russia/CIS market role | hh.ru (primary), geekjob.ru (secondary, tech-only), Telegram chats | hh.ru is the dominant RU resume database; geekjob narrows to tech; LinkedIn penetration is low there — see caveat below |
-| Early-stage/indie-hacker, solo builder | Twitter/X, Threads | This audience under-indexes on LinkedIn and over-indexes on build-in-public posting |
-| Nothing role-specific stands out | *(none)* | Default to LinkedIn only — don't force a platform match |
+| Signal in the persona                                                                                                   | Suggest                                                            | Why this pool beats/complements LinkedIn                                                                                                                    |
+| ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Product/visual/UI designer, portfolio-driven role                                                                       | Dribbble, Behance                                                  | Portfolio quality is directly visible; LinkedIn profiles rarely show actual work                                                                            |
+| Developer/engineer, any stack                                                                                           | GitHub, Stack Overflow                                             | Actual code and technical depth are directly visible — the single strongest signal on this list, stronger than LinkedIn's self-reported titles              |
+| Developer/engineer, especially open-source or indie/build-in-public                                                     | Twitter/X                                                          | Public builders post work-in-progress and opinions LinkedIn doesn't surface                                                                                 |
+| Data scientist / ML engineer                                                                                            | Kaggle                                                             | Competition tier and public notebooks show applied modeling skill directly, not just tool keywords on a resume                                              |
+| Backend/systems engineer where the role explicitly values strong algorithms/DSA (quant, big-tech-style interview loops) | Codeforces                                                         | Rating is a standardized, hard-to-fake measure of algorithmic ability — but see the caveat in the recipe before treating it as a general engineering signal |
+| Community, DevRel, marketing-to-developers                                                                              | Twitter/X, Reddit                                                  | These are the audiences such roles already engage — activity there is a direct skill signal                                                                 |
+| Deep technical niche (rare stack, research area)                                                                        | Reddit (topic subreddits)                                          | Niche subreddits concentrate specialists that generic LinkedIn keyword search misses                                                                        |
+| Russia/CIS market role                                                                                                  | hh.ru (primary), geekjob.ru (secondary, tech-only), Telegram chats | hh.ru is the dominant RU resume database; geekjob narrows to tech; LinkedIn penetration is low there — see caveat below                                     |
+| Early-stage/indie-hacker, solo builder                                                                                  | Twitter/X, Threads                                                 | This audience under-indexes on LinkedIn and over-indexes on build-in-public posting                                                                         |
+| Nothing role-specific stands out                                                                                        | _(none)_                                                           | Default to LinkedIn only — don't force a platform match                                                                                                     |
 
 **Region caveat:** the hh.ru/geekjob/Telegram branch only fires when the persona's location or
 company context is explicitly Russia/CIS. Treat it as a conditional match, not a default
 inclusion for every ambiguous or unstated location — the earlier skill audit flagged
 hardcoded Russia-only logic as a bug precisely because it fired outside that context.
+
+**What counts as explicit:** the JD or persona states a RU/CIS country or city, or names a
+company that is legally based there. The JD being _written in Russian_ or containing Cyrillic
+names, on its own, is **not** sufficient — a Cyrillic-language JD with no stated location or
+company base is ambiguous, not explicit. Given that hh.ru and geekjob.ru now carry
+criminal-liability framing (ст. 272.1 УК РФ) rather than plain ToS risk, getting this wrong in
+either direction has real cost: don't guess. When the signal is ambiguous, say so and ask the
+user to confirm the region before this branch fires.
 
 ---
 
@@ -115,9 +123,10 @@ Bio search is more reliable than tweet-content search for identifying current ro
 (likely a lead-gen or aggregator account, not the person).
 
 **Safety — public X-ray search only, never log in or automate.** X has pursued CFAA-based
-litigation against scrapers (e.g. *X Corp. v. Bright Data*, 2023) and aggressively rate-limits
+litigation against scrapers (e.g. _X Corp. v. Bright Data_, 2023) and aggressively rate-limits
 or blocks logged-out access with bot-walls, so treat the ToS boundary as actively enforced,
 not theoretical:
+
 - Never log in to browse — an authenticated session is what triggers ToS/CFAA exposure and
   the follower/following graph in particular is a common target of past enforcement actions.
 - Never automate requests (headless browser, scraper, unofficial API) against x.com/twitter.com
@@ -136,7 +145,7 @@ name, LinkedIn, or portfolio.
 **Good signal:** long-standing account with substantive technical answers in a relevant
 subreddit; flair indicating expertise level.
 **Red flag:** anonymity means you often can't reach a real identity at all — Reddit is best
-used to find *language and problems this community cares about* for outreach personalization,
+used to find _language and problems this community cares about_ for outreach personalization,
 not always as a direct sourcing-to-contact channel.
 **Safety:** never attempt to de-anonymize a Reddit user via cross-referencing without their
 consent — flag this limitation to the user rather than guessing.
@@ -178,9 +187,10 @@ snippet match.
 
 **Safety — do NOT scrape or automate hh.ru directly.** hh.ru's User Agreement
 (`hh.ru/article/28949`, prohibited-actions list, item 12) explicitly bans
-*"использование функций парсинга/программ парсинга"* (use of parsing functions/programs),
+_"использование функций парсинга/программ парсинга"_ (use of parsing functions/programs),
 grouped with proxy evasion and remote-desktop circumvention as a security violation. The
 exposure here is materially higher than LinkedIn's civil-ToS-only risk:
+
 - **Criminal liability** — since 11.12.2024, unauthorized collection of personal data falls
   under ст. 272.1 УК РФ, with penalties up to 5 years.
 - **152-ФЗ fines** — turnover-based penalties up to ~18M ₽ for personal-data violations,
@@ -224,8 +234,15 @@ once found.
 Telegram communities are typically relevant for this role type (if known from context) and
 hand off the manual search, same as the "no web search tool available" fallback in Module 2
 Part B.
+
 **Safety:** never suggest joining a chat under false pretenses or scraping member lists —
-both violate Telegram ToS and most communities' own norms.
+both violate Telegram ToS and most communities' own norms. This doesn't cover the whole risk,
+though: the recipe above has the user manually read a chat and paste names/handles back, which
+is personal-data processing even without any scraping involved. If any community member is
+plausibly EU-based, that's GDPR-relevant processing without the subject's consent — being
+manual rather than automated doesn't exempt it. Flag this to the user before they hand back
+names, and treat consent for these candidates the same as any other cold-outreach channel, not
+as pre-cleared because a human did the copying instead of a script.
 
 ### Threads
 
