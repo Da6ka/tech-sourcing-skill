@@ -27,7 +27,7 @@ if (!existsSync(skillPath)) {
   // the anchored regex below and report a false "no frontmatter" failure.
   const text = readFileSync(skillPath, "utf8")
     .replace(/^\uFEFF/, "")
-    .replace(/^\s*\n/, "");
+    .replace(/^\s*\n+/, "");
   const fm = /^---\r?\n([\s\S]*?)\r?\n---/.exec(text);
   if (!fm) {
     errors.push("SKILL.md has no YAML frontmatter block");

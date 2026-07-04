@@ -509,7 +509,7 @@ Good for senior candidates who get spammed.
   a ~120-person Series B AI startup in Amsterdam" — candid about the confidentiality, specific
   about everything else; never a made-up name or vague filler like "a leading company"
 - One concrete reason this role is interesting (comp, scope, stage, mission, etc.)
-- End with a clear, easy ask: "Are you open to a 15-minute call next week?" — not "Let me know if you'd like to learn more"
+- End with a clear, easy ask: "Are you open to a 30-minute call next week?" — not "Let me know if you'd like to learn more"
 - No buzzwords: "rockstar," "synergy," "passionate," "world-class," "revolutionary," "transformational"
 - No fake urgency
 - Sound like a human, not a recruiter template
@@ -590,7 +590,12 @@ same persona.
 - `references/other-platforms.md` — the Checkpoint 0 decision table and Module 2 Part D search
   recipes for sourcing beyond LinkedIn (GitHub, Stack Overflow, Kaggle, Codeforces, Twitter/X,
   Reddit, Dribbble, Behance, hh.ru, geekjob.ru, Telegram, Threads)
+- `references/example-walkthrough.md` — a full worked run showing verification catching
+  aspirational profiles and stale snippets, and how judgment calls (geography exceptions,
+  overqualification) should be surfaced rather than decided silently
 
 Read the first two if the user asks for more advanced search syntax or wants to see examples
 beyond what this skill generates. Read `other-platforms.md` at Checkpoint 0 to map the user's
-answer to platforms, and again in Module 2 Part D to run each selected platform's recipe.
+answer to platforms, and again in Module 2 Part D to run each selected platform's recipe. Read
+`example-walkthrough.md` when reasoning through an ambiguous scoring or verification judgment
+call mid-run.
