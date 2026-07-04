@@ -40,6 +40,10 @@ site:linkedin.com/in "Marketing Manager" "Unilever" OR "P&G" OR "Nestlé"
 - Use company names as keywords to find people who worked at specific firms
 - Combine title with a skill or tool: `"Demand Generation" "HubSpot" "SaaS"`
 - Use past-tense company names for career-changers: `"ex-McKinsey" OR "formerly McKinsey"`
+- **`-exclusion` is a blunt instrument** — a bare `-recruiter` drops any indexed page containing
+  that word *anywhere*, including sidebar "People also viewed" text or unrelated boilerplate, so
+  it can suppress good candidate profiles along with the ones you meant to exclude. Prefer a more
+  specific phrase exclusion (`-"recruiter at"`, `-"talent acquisition"`) over a single bare word.
 
 ## LinkedIn Sales Navigator search
 
