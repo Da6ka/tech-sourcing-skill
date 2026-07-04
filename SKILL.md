@@ -71,6 +71,7 @@ and I'll run the full workflow:
 ```
 
 Route the chosen scenario to the matching modules:
+
 - Scenario 1 → Modules 1–4 in order (the default full run, paced by the two checkpoints below)
 - Scenario 2 → a condensed Module 1 persona (a few bullets, not the full template) + Module 2 Part A only
 - Scenario 3 → Module 4 (ask for the role context if missing)
@@ -82,6 +83,7 @@ Route the chosen scenario to the matching modules:
 ## What you need from the user
 
 Before running the full workflow, confirm you have at least ONE of these inputs:
+
 - **Job description (JD)** — the full text or a summary
 - **Briefing notes** — recruiter or hiring manager context
 - **Example profiles** — pasted LinkedIn bios of ideal or similar candidates
@@ -89,6 +91,18 @@ Before running the full workflow, confirm you have at least ONE of these inputs:
 
 If the user hasn't provided enough, show the scenario menu above rather than asking
 open-ended questions. One message is enough — don't interrogate.
+
+**If the input describes more than one role, or is internally contradictory:** don't silently
+pick one or blend them into a single incoherent persona. Name what you saw and ask which role
+to build the persona around (e.g. "This briefing covers both a Staff Engineer and an EM req —
+which one should I build the persona for?"), or flag the contradiction directly (e.g. "This JD
+says both '5+ years required' and 'entry-level compensation' — which one reflects the actual
+target?") before proceeding to Module 1.
+
+**If seniority AND location are both absent from the input:** search strings and platform
+choice depend on both. Ask one direct clarifying question for whichever is missing rather than
+guessing or proceeding into a vague persona — this is the one case worth breaking the "no
+open-ended questions" rule above, since guessing wrong here cascades into every later module.
 
 ---
 
@@ -112,7 +126,7 @@ Before I build the persona — what type of candidates are you sourcing?
 ```
 
 LinkedIn (Module 2 Parts A–C) always runs regardless of the answer — it's the shared baseline
-for every candidate type. The answer only decides which *additional* platform(s) run alongside
+for every candidate type. The answer only decides which _additional_ platform(s) run alongside
 it in Module 2 Part D: map it to the decision table in `references/other-platforms.md`, or
 honour a specific platform the user names directly ("also check Reddit") instead of the menu.
 
@@ -134,6 +148,7 @@ outreach, or stop here.
 next-steps footer. No checkpoint between them — both are cheap and complement each other.
 
 Rules:
+
 - Keep each checkpoint to 1–2 lines: a direct question, not another menu
 - If the user answers with corrections, apply them and re-deliver only the affected module
   before moving on
@@ -197,6 +212,7 @@ platform(s) were selected at Checkpoint 0.
 #### Part A: Boolean search strings
 
 Generate 3–5 Boolean strings ready to paste into:
+
 - LinkedIn search bar (free or Recruiter)
 - Google (`site:linkedin.com` format)
 - LinkedIn Sales Navigator
@@ -210,6 +226,7 @@ Google:   site:linkedin.com/in "[title1]" OR "[title2]" "[company type]" "[locat
 ```
 
 Rules for good Boolean strings:
+
 - Use job titles in quotes, joined with OR for variants ("Head of Marketing" OR "VP Marketing" OR "Marketing Director")
 - Add 1–2 skill or industry keywords that narrow without over-filtering
 - Keep location flexible unless the role is location-specific
@@ -243,6 +260,7 @@ tell the user to run them manually in Google or LinkedIn, and offer to continue 
 Modules 3–4 once they paste the results back.
 
 **How to search:**
+
 1. Build a targeted Google query: `site:linkedin.com/in "Job Title" "keyword" "location"`
 2. Run your web search tool with this query
 3. Keep only individual profile URLs — i.e. `linkedin.com/in/...` (including country
@@ -435,6 +453,7 @@ they're specific, respectful of the recipient's time, and clearly demonstrate th
 their homework.
 
 You have two inputs at this stage:
+
 - The role: job title, company, brief context (from Modules 1–3)
 - The candidate's profile: from the LinkedIn snippet found in Module 2, or a full profile
   pasted by the user
@@ -465,6 +484,7 @@ A short, low-commitment opener that invites a conversation without selling the r
 Good for senior candidates who get spammed.
 
 **Rules for ALL variants:**
+
 - 80–120 words maximum (LinkedIn InMail attention span is short)
 - Open with something specific to the candidate, not "I hope you're well"
 - Name the company and role clearly — no mystery teasers. If the input doesn't include the
