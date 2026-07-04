@@ -51,16 +51,56 @@ things tidy.
 
 ## Example
 
-Paste a job description and ask:
+> **Manual sourcing:** hours of Boolean-string tinkering, tab-switching across LinkedIn, GitHub,
+> and whatever else the role calls for, then building a scorecard from scratch.
+> **This skill:** one prompt in → persona, search strings, a scored candidate table, and
+> outreach drafts — in one pass.
 
-> Source candidates for this role: [JD text]
+One prompt:
 
-The skill responds in one pass with a candidate persona, 3–5 Boolean search strings (for LinkedIn, Google, and Sales Navigator), a table of ~15–20 real LinkedIn profiles with confidence ratings, a scorecard tailored to the role's must-haves, and three outreach drafts for the top match. For a tech/design/data role, it first asks which candidate pool you need and — once you answer — adds a second table of profiles from the matching platform (e.g. GitHub for an engineering search, Dribbble for a design one).
+> Source candidates for this role: **Backend Engineer**, remote, $80–110k. Series A fintech
+> startup. Needs 3+ years of Go and Postgres in production, and has to be comfortable owning
+> infra decisions solo — no platform team yet.
 
-See [`references/example-walkthrough.md`](references/example-walkthrough.md) for a full worked
-example — from job description to a verified, scored, tiered candidate list — including the
-verification catches (aspirational LinkedIn branding, stale search snippets) and judgment calls
-(geography exceptions, overqualification calls) that a search-only tool would miss.
+Here's the shape of what comes back, in one pass:
+
+**Persona** (abridged)
+- 3–5+ years backend, Go + Postgres in production, not just coursework or a side project
+- Has personally owned an infra or deploy decision, not just executed one someone else made
+- Comfortable in an early-stage, ambiguous environment without a platform team backstop
+
+**Boolean search strings** (2 of 5)
+```
+LinkedIn: "backend engineer" OR "software engineer" Go Postgres "series a" OR "seed"
+GitHub:   language:go stars:>50 location:remote
+```
+
+**Candidate table** (4 of 17 rows)
+| # | Name | Current role | Confidence | Why included |
+|---|---|---|---|---|
+| 1 | [Name] | Backend Eng @ [seed-stage fintech] | High | 4 yrs Go, owns the deploy pipeline solo |
+| 2 | [Name] | Senior SWE @ [Series B SaaS] | Medium | Go + Postgres, no solo-infra evidence yet |
+| 3 | [Name] | Founding Engineer @ [YC startup] | High | Built and owns infra from day one |
+| 4 | [Name] | Backend Eng @ [Series C, larger team] | Low-Medium | Right stack, likely used to a platform team |
+
+**Scorecard**
+| Criterion | Score |
+|---|---|
+| Go/Postgres in production | /3 |
+| Solo infra ownership | /3 |
+| Early-stage comfort | /3 |
+
+**Outreach** (Variant 1 of 3 — Career growth)
+> Hi [Name] — building the founding backend team at a Series A fintech, and your work owning
+> [specific infra decision from their profile] at [Company] is exactly the kind of ownership
+> we need without a platform team behind you yet...
+
+That's the whole loop from one message — no manual Boolean-string writing, no building a
+scorecard by hand, no drafting outreach from scratch.
+
+For the deeper story — what happens when a "High confidence" result turns out to be a stale
+LinkedIn snippet, and how the skill handles judgment calls like geography exceptions — see
+[`references/example-walkthrough.md`](references/example-walkthrough.md).
 
 
 ## Avoiding LinkedIn account restrictions
