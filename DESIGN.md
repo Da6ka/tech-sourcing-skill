@@ -111,11 +111,11 @@ persona + search they don't need.
 
 **Checkpoints (the core control mechanism):**
 
-| Checkpoint | Placed          | Purpose                                                      | Escape hatch                                                                   |
-| ---------- | --------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| 0          | Before Module 1 | Pick additional platform(s) beyond LinkedIn baseline         | Skipped if JD makes candidate type unambiguous; stated as an inference instead |
-| 1          | After Module 1  | Confirm persona before spending the search budget            | None — always stops, since this gates the expensive step                       |
-| 2          | After Module 2  | Choose: retry search / continue to scorecard+outreach / stop | User can request "run it all" to skip 0–2 entirely                             |
+| Checkpoint | Placed          | Purpose                                                      | Escape hatch                                                                                     |
+| ---------- | --------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
+| 0          | Before Module 1 | Pick additional platform(s) beyond LinkedIn baseline         | Skipped if JD makes candidate type unambiguous; stated as an inference instead                     |
+| 1          | After Module 1  | Confirm persona before spending the search budget            | No per-checkpoint bypass of its own — covered by the shared "run it all" escape hatch below         |
+| 2          | After Module 2  | Choose: retry search / continue to scorecard+outreach / stop | User can request "run it all" to skip 0–2 entirely (Checkpoint 1 included, despite gating the expensive step) |
 
 Stage 3 (Modules 3+4) has no checkpoint between them — both are cheap and complementary, so
 gating them separately would add friction without controlling any expensive action.
