@@ -260,7 +260,11 @@ always-loaded frontmatter/instruction body smaller.
   reports and every PR becomes permanently blocked. The fix is to keep an aggregate gate job named
   exactly `validate` (`needs: [test]`) over any matrix, rather than renaming the required check.
   `--admin`-merging past this is treated as a non-option.
-- **Changelog.** `CHANGELOG.md` gets a dated entry on every push (not just releases).
+- **Changelog.** `CHANGELOG.md` gets a dated entry on every push that changes skill behavior or
+  content (not just releases); pure-tooling pushes (lint/format config, CI plumbing) get a short
+  entry too rather than being silently dropped — a gap here (PR #40 initially shipped with no
+  entry) is what this doc's own drift was caught on, so treat a missing entry as a review-time
+  check, not an assumption.
 - **Releases.** User-facing milestones get a matching GitHub Release via `gh release create` —
   v1.0.0 (initial), v1.1.0 (multi-platform expansion), v2.0.0 (rename from `linkedin-sourcing-skill`
   to `tech-sourcing-skill`, reflecting the platform expansion beyond LinkedIn-only).
