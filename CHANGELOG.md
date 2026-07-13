@@ -2,6 +2,24 @@
 
 ## v2.0.1 — Edge-case hardening
 
+## 2026-07-04 — Fix stale 15-minute CTA and missing walkthrough reference ([PR #40](https://github.com/Da6ka/tech-sourcing-skill/pull/40))
+
+Module 4's outreach CTA rule in SKILL.md still said "15-minute call" after
+`references/outreach-examples.md` was rewritten to 30-minute — the rule now matches its own
+worked examples. `references/example-walkthrough.md` is now listed in SKILL.md's References
+section, so it's read for ambiguous scoring/verification judgment calls mid-run rather than
+only known about indirectly. `validate-skill.mjs`'s leading-blank-line strip now handles more
+than one blank line before frontmatter.
+
+No functional changes to the skill's default happy path — a self-consistency fix and a
+validator hardening fix.
+
+## 2026-07-13 — Tooling: exclude Markdown and JS from Prettier ([PR #42](https://github.com/Da6ka/tech-sourcing-skill/pull/42), [PR #44](https://github.com/Da6ka/tech-sourcing-skill/pull/44))
+
+Prettier was rewriting emphasis style (`_x_` ↔ `*x*`) in shipped Markdown on every format run;
+`.prettierignore` now excludes `*.md`, then `*.js`/`*.mjs` for consistency with the other repos.
+No content or behavior changes.
+
 ## 2026-07-04 — Fix remaining edge cases across SKILL.md, references, and the validator ([PR #38](https://github.com/Da6ka/tech-sourcing-skill/pull/38))
 
 Found via a follow-up subagent edge-case review of the same five files covered in #36, closing
