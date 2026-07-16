@@ -1,5 +1,68 @@
 # Changelog
 
+## 2026-07-16 — Document why the cf-connecting-ip fallback is safe ([PR #66](https://github.com/Da6ka/tech-sourcing-skill/pull/66))
+
+Comment only, no behavior change. A review flagged the demo rate limiter's `?? "unknown"` IP
+fallback as failing open; it doesn't. Cloudflare sets `cf-connecting-ip` on every request that
+reaches the Worker and rejects any client that supplies its own with a 403 at the edge, so the
+fallback is unreachable and the header can't be spoofed to mint a fresh rate-limit bucket. Were
+it reached, sharing one bucket is the restrictive direction, not a bypass. Recorded on the line
+so the finding isn't re-opened.
+
+## 2026-07-16 — Preserve line breaks and render fenced blocks in the demo ([PR #65](https://github.com/Da6ka/tech-sourcing-skill/pull/65))
+
+The web app's Markdown renderer joined consecutive paragraph lines with a space, so the Boolean
+search strings — the app's main copy-pasteable deliverable, which SKILL.md formats as consecutive
+bare lines — rendered as one run-on paragraph. Paragraph lines now join with `<br>`; real model
+output soft-wraps prose as single long lines, so ordinary text doesn't turn ragged. Also added
+fenced code block support, which was missing entirely: the inline-code regex chewed ``` fences
+into garbage, and real responses do return them. Frontend only, deployed to Pages separately.
+
+## 2026-07-16 — Use a sliding window for the demo's rate limiter ([PR #64](https://github.com/Da6ka/tech-sourcing-skill/pull/64))
+
+The limiter bucketed on wall-clock hour, so a caller could spend a full quota just before the
+hour rolled and another immediately after — 10 requests in a couple of minutes against a 5/hour
+cap. It's now a sliding-window log: each allowed request's timestamp is kept and ages out on its
+own schedule, so there's no boundary to exploit. 429s also carry an accurate `Retry-After`, which
+the fixed window couldn't know. Verified by running the same burst against both algorithms with
+the window shrunk to 10s — the old one let a 6th request through, the new one rejects it.
+
+## 2026-07-16 — Restrict the demo API's CORS to known origins ([PR #63](https://github.com/Da6ka/tech-sourcing-skill/pull/63))
+
+`Access-Control-Allow-Origin` was `*`, so any site could call `/api/source` from its visitors'
+browsers — spending the demo's Anthropic and Firecrawl budget and burning the per-IP rate limit
+across that site's whole audience. Now an allowlist: the Pages frontend and its per-deploy
+preview subdomains, plus localhost for development. CORS is browser-enforced, so this closes
+cross-site embedding only; the rate limiter remains the control for direct scripted callers.
+
+## 2026-07-16 — Stop relaying upstream error text to demo callers ([PR #62](https://github.com/Da6ka/tech-sourcing-skill/pull/62))
+
+`/api/source` returned `err.message` verbatim on a 500, and upstream failures arrive with their
+raw bodies attached — the Firecrawl search error interpolated the response text — so a public
+endpoint echoed upstream account and quota detail to anyone who could trigger a failure. It now
+returns a generic message and logs the detail, with `[observability]` enabled so that log is
+retained rather than visible only during a live `wrangler tail`. Fixed at the source too: the
+search error is surfaced to the model as a tool result whose text is returned to the caller, so
+a raw body could reach a client through a 200, not only a 500.
+
+## 2026-07-16 — Typecheck the Worker in CI ([PR #61](https://github.com/Da6ka/tech-sourcing-skill/pull/61))
+
+CI ran only `validate-skill.mjs`, which checks the skill's Markdown structure and link targets.
+The Worker under `webapp/worker` is TypeScript that ships to production and nothing verified it —
+a `typecheck` script existed in its package.json but no job ever called it, so a type error could
+reach a deploy with a green check on the PR. Adds a job running `npm ci && npm run typecheck`,
+folded into the existing `validate` aggregate so the single required status check on main covers
+it. It caught a real bug within the day: a self-recursive helper introduced during PR #63.
+
+## 2026-07-16 — Cap jobDescription size on the demo API ([PR #60](https://github.com/Da6ka/tech-sourcing-skill/pull/60))
+
+`/api/source` validated only that `jobDescription` was non-empty, so a caller could post an
+arbitrarily large body and have it billed as Opus input tokens. The rate limiter caps request
+count (5/hour/IP), not spend per request, and the agent loop resends the whole conversation on
+each of up to 12 turns — so an oversized body grew cost quadratically in turns. Bodies over 20k
+characters now get a 413 before reaching the agent, well clear of any realistic job description.
+The textarea gains a matching maxlength as a UX hint; the Worker check is the enforcement.
+
 ## 2026-07-16 — Add web-app wrapper as webapp/, switch rate limiting to a Durable Object ([PR #58](https://github.com/Da6ka/tech-sourcing-skill/pull/58))
 
 The Cloudflare Worker + Pages code behind the live demo (linked from the README in #56) is now
