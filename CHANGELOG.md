@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-16 — Verify the demo smoke test from the response body, not `wrangler tail` ([PR #69](https://github.com/Da6ka/tech-sourcing-skill/pull/69))
+
+`SMOKE.md` told you to watch `wrangler tail` for the Apollo call, but live runs showed tail
+connects and then captures no invocations when piped to a file or run non-interactively, even
+when attached before the request — so the documented check silently proved nothing. The tail step
+is now marked optional and interactive-TTY-only, and the reliable pass criterion is Apollo-only
+data in the response body itself: dated employer history and the `(NDA)` placeholder, neither of
+which a search-snippet fallback can produce. Docs only, no behavior change.
+
+## 2026-07-16 — Add a `fetch_profile` enrichment tool to the demo agent ([PR #68](https://github.com/Da6ka/tech-sourcing-skill/pull/68))
+
+The hosted agent had one tool, `search_web`, and scored candidates from search snippets alone —
+no dated employment history, which is what the skill's scorecard actually wants. Adds a second
+tool, `fetch_profile(url)`: LinkedIn URLs route to Apollo's people/match for dated history and
+fall back to a snippet when Apollo has no match, and everything else (GitHub, hh.ru, personal
+sites) goes to Firecrawl scrape, since Firecrawl blocklists LinkedIn. Profile data only — no
+email or phone reveal. Apollo's `seniority` field is deliberately dropped: on a live run it
+labelled both a 20-year data architect and a mid-career senior DE "entry", so the agent relies on
+the dated history instead. A `HARNESS_NOTE` caps enrichment at roughly five High-confidence
+LinkedIn profiles per run to bound Apollo credit spend and agent turns. Adds the `APOLLO_API_KEY`
+secret. URL routing is unit-tested (9/9, including country subdomains and a spoofed
+`evil-linkedin.com.attacker.io` host); typecheck clean.
+
 ## 2026-07-16 — Document why the cf-connecting-ip fallback is safe ([PR #66](https://github.com/Da6ka/tech-sourcing-skill/pull/66))
 
 Comment only, no behavior change. A review flagged the demo rate limiter's `?? "unknown"` IP
