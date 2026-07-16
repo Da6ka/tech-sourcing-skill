@@ -1,5 +1,45 @@
 # Changelog
 
+## 2026-07-16 — Override SKILL.md's checkpoints explicitly in the demo harness note ([PR #73](https://github.com/Da6ka/tech-sourcing-skill/pull/73))
+
+The hosted demo is a single request/response call: any question the model asks ends the run and
+leaves the caller with nothing usable. The harness note tried to prevent that with one sentence
+telling the model to skip the skill's conversational checkpoints, and that sentence lost to
+SKILL.md's titled, 45-line "Checkpoints — don't deliver everything at once" section. On a shortened
+JD the run really did stop after the persona to ask for confirmation nobody could give.
+
+The note now names that section, overrides Checkpoints 0, 1 and 2 in full, and defuses Checkpoint
+1's stated rationale rather than just contradicting it: the checkpoint exists so that searches are
+not spent on an unconfirmed persona, but submitting the JD to this endpoint *is* that confirmation
+and there is nobody to confirm with afterwards. It also says what to do instead of asking — decide
+from the JD, state the assumption in one line, keep going — and forbids ending on a question.
+
+Scope note: on the full 3470-character JD the checkpoint never fired, either before or after this
+change. The 40-second persona-only pause that prompted the work reproduced only on a shortened
+1138-character JD. This is therefore defensive hardening for short or ambiguous input, not a fix
+for an observed production failure.
+
+The consent gate is deliberately preserved. The hh.ru/geekjob/Telegram region caveat in
+`references/other-platforms.md` gates a source for legal reasons rather than for pacing, so
+"never pause, always proceed" must not unlock it: the note resolves the caveat without asking,
+fires the branch only on an explicitly named Russia/CIS location or a company legally based there,
+and otherwise omits it with a one-line note. Verified on a live run — the model declines the branch
+inline, citing that a Russian-language JD alone is not a Russia/CIS signal, and continues.
+
+## 2026-07-16 — Return the whole agent transcript, not just the last turn ([PR #72](https://github.com/Da6ka/tech-sourcing-skill/pull/72))
+
+The demo agent writes each stage of the workflow — persona, Boolean strings, notes on what a search
+turned up — as text in the same turn it calls its tools. The loop returned only the final turn's
+text, so every stage but the last was discarded and the caller got a write-up that opened
+mid-thought, referring to work it never saw. This was the demo's most visible bug and a code review
+missed it; it surfaced only on running the thing end to end.
+
+The loop now collects the text from every turn and returns the joined transcript. A live run on a
+real 3470-character JD comes back at 15343 characters across five sections — persona, Boolean
+strings, profiles, scorecard, outreach — where the old code would have delivered the closing
+section alone. Multiple text blocks within a single response are kept. The "no text at all" case
+still throws, now keyed on the whole transcript being empty rather than on one response.
+
 ## 2026-07-16 — Verify the demo smoke test from the response body, not `wrangler tail` ([PR #69](https://github.com/Da6ka/tech-sourcing-skill/pull/69))
 
 `SMOKE.md` told you to watch `wrangler tail` for the Apollo call, but live runs showed tail
