@@ -269,7 +269,8 @@ always-loaded frontmatter/instruction body smaller.
   v1.0.0 (initial), v1.1.0 (multi-platform expansion), v2.0.0 (rename from `linkedin-sourcing-skill`
   to `tech-sourcing-skill`, reflecting the platform expansion beyond LinkedIn-only), v2.0.1
   (edge-case hardening), v2.1.0 (worked-example wiring and consistency fixes), v2.2.0 (the hosted
-  web-app demo under `webapp/`, its security hardening, and profile enrichment). The README's
+  web-app demo under `webapp/`, its security hardening, and profile enrichment), v2.2.1 (output
+  language judged by the JD's body text rather than its job title, headings included). The README's
   release badge links to a version-pinned release URL, so cutting a release means bumping that
   link in the same cycle or it points at the previous one.
 - **Local/remote sync.** The local install (`~/.claude/skills/tech-sourcing/`) is a git clone of

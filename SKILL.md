@@ -26,9 +26,16 @@ them, and write personalised outreach — delivered in three stages with three u
 
 ## Output language
 
-Write all output (persona, tables, and the Cowork instruction block) in English by default.
-If the user is clearly writing in a different language, or the JD/briefing is in a different
-language, match that language instead.
+Write all output — persona, section headings, tables, inline notes, and the Cowork instruction
+block — in English by default. If the user is clearly writing in a different language, or the
+JD/briefing is in a different language, match that language instead, **headings included**. Do not
+mix: a Russian run gets Russian headings, not English ones over Russian prose.
+
+**Judge the JD by its body text, not by the job title.** Role titles are routinely English inside
+an otherwise non-English posting — "Lead Generation Manager" heading a Russian JD is normal — as
+are tool, platform, and skill names (dbt, Snowflake, LinkedIn). None of those make it an English
+JD. Read the prose: if the sentences describing the company, the role, and the requirements are
+Russian, it is a Russian JD and the whole run is written in Russian.
 
 **Exception — outreach messages (Module 4):** write them in the language the candidate most
 likely reads comfortably, inferred from the language of their profile — even when the rest of

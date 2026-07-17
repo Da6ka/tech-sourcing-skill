@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-17 — Match the JD's language by its body text, not its job title (v2.2.1)
+
+A Russian JD came back with English section headings over Russian prose. SKILL.md's "Output
+language" rule already said to match the JD's language, but it never said how to decide what that
+language is, and it listed "persona, tables, and the Cowork instruction block" without mentioning
+headings — so headings drifted.
+
+Two gaps closed. The rule now covers section headings explicitly and forbids mixing: a Russian run
+gets Russian headings, not English ones over Russian prose. And it says to judge the JD by its body
+text rather than its job title — role titles are routinely English inside an otherwise
+non-English posting ("Lead Generation Manager" heading a Russian JD), as are tool and platform
+names, and none of those make it an English JD.
+
+The Module 4 exception is unchanged: outreach still follows the candidate's likely language, with a
+one-line note when it differs from the rest of the run.
+
+The demo's turn-cap note (#75) had the same problem in code rather than in prose — it is appended
+by the Worker after the agent is out of turns, so no model call can write it. It now follows the
+JD's script, judged on the body's letters rather than the title. This distinguishes Russian from
+English only, where the rule the model follows covers every language; a Russian JD consisting
+almost entirely of English tool names would still get an English note, which prose-bearing JDs do
+not trigger in practice.
+
 ## 2026-07-17 — Return the partial transcript when the agent hits its turn cap ([PR #75](https://github.com/Da6ka/tech-sourcing-skill/pull/75))
 
 The demo agent's loop ended with an unconditional `throw`, so hitting `MAX_AGENT_TURNS` returned a
